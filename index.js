@@ -1,14 +1,10 @@
-const src1 = "./images/1.png";
-const src2 = "./images/2.png";
-const src3 = "./images/3.png";
-const src4 = "./images/4.png";
-const src5 = "./images/5.png";
-const src6 = "./images/6.png";
-
 const imgElementLeft = document.querySelector("#card-left img");
 const imgElementRight = document.querySelector("#card-right img");
 
-let srcValue = (imgElementLeft.src = `${src2}`);
+const diceNumberLeft = document.querySelector("#dice-number-left");
+const diceNumberRight = document.querySelector("#dice-number-right");
+
+// srcValue = (imgElementLeft.src = `./images/1.png`);
 // console.log(srcValue);
 
 let title = document.querySelector("#title");
@@ -25,15 +21,28 @@ function getRandomNum(sides) {
 function handleButtonClick() {
   const randomNumberLeft = getRandomNum(6);
   const randomNumberRight = getRandomNum(6);
-  console.log(randomNumberLeft);
-  console.log(randomNumberRight);
+  // console.log(randomNumberLeft);
+  // console.log(randomNumberRight);
 
-  if (randomNumberLeft === 1 && randomNumberRight === 1) {
-    title.textContent = "Its a draw";
+  if (randomNumberLeft === randomNumberRight) {
+    srcValue = imgElementLeft.src = `./images/${randomNumberLeft}.png`;
+    srcValue = imgElementRight.src = `./images/${randomNumberRight}.png`;
+    title.textContent = "Its a draw!";
+    diceNumberLeft.textContent = `${randomNumberLeft}`;
+    diceNumberRight.textContent = `${randomNumberRight}`;
+  } else if (randomNumberLeft >= randomNumberRight) {
+    srcValue = imgElementLeft.src = `./images/${randomNumberLeft}.png`;
+    srcValue = imgElementRight.src = `./images/${randomNumberRight}.png`;
+    title.textContent = "Player 1 Wins!";
+    diceNumberLeft.textContent = `${randomNumberLeft}`;
+    diceNumberRight.textContent = `${randomNumberRight}`;
+  } else if (randomNumberLeft <= randomNumberRight) {
+    srcValue = imgElementLeft.src = `./images/${randomNumberLeft}.png`;
+    srcValue = imgElementRight.src = `./images/${randomNumberRight}.png`;
+    title.textContent = "Player 2 Wins!";
+    diceNumberLeft.textContent = `${randomNumberLeft}`;
+    diceNumberRight.textContent = `${randomNumberRight}`;
   }
 }
 
 handleButtonClick();
-
-
-

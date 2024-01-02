@@ -70,7 +70,7 @@ body {
 
 .dice {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   gap: 15rem;
   margin-top: 4rem;
 }
@@ -80,10 +80,22 @@ body {
 }
 
 .card {
+  width: 384px;
+  aspect-ratio: 1;
   padding: 3rem;
   background: #f3f3f3;
   border-radius: 1.7rem;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.result {
+  color: #919191;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content:center;
+  gap: 38rem;
+  margin-top: 3rem;
 }
 
 footer {
@@ -93,5 +105,9 @@ footer {
   position: absolute;
   bottom: 0;
   left: 44%;
-  /* width: 100%; */
+}
+
+
+footer a {
+  color:#8b87d1;
 }
